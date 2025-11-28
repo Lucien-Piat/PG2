@@ -4,7 +4,7 @@ from itertools import combinations
 from collections import defaultdict
 
 # Parameters
-THRESHOLD = 3  # Keep only edges with weight >= THRESHOLD
+THRESHOLD = 2  # Keep only edges with weight >= THRESHOLD
 INPUT_FILE = "data/pangenome_articles.json"
 
 # Load articles
