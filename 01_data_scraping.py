@@ -56,7 +56,7 @@ for start in range(0, len(id_list), batch_size):
     time.sleep(0.34)
 
 # Save to JSON
-with open("pangenome_articles.json", "w", encoding="utf-8") as f:
+with open("data/pangenome_articles.json", "w", encoding="utf-8") as f:
     json.dump(articles, f, indent=2, ensure_ascii=False)
 
 print(f"\nSaved {len(articles)} articles to pangenome_articles.json")
