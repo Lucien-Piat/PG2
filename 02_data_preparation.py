@@ -29,13 +29,13 @@ print(f"Edges: {len(edges)}")
 
 # --- CYTOSCAPE: CSV files ---
 with open("data/cytoscape_edges.csv", "w", newline="", encoding="utf-8") as f:
-    writer = csv.writer(f)
+    writer = csv.writer(f, delimiter=';')
     writer.writerow(["source", "target", "weight"])
     for (author1, author2), weight in edges.items():
         writer.writerow([author1, author2, weight])
 
 with open("data/cytoscape_nodes.csv", "w", newline="", encoding="utf-8") as f:
-    writer = csv.writer(f)
+    writer = csv.writer(f, delimiter=';')
     writer.writerow(["id", "affiliation"])
     for name, affiliation in nodes.items():
         writer.writerow([name, affiliation])

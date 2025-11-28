@@ -4,7 +4,7 @@ from itertools import combinations
 from collections import defaultdict
 
 # Parameters
-THRESHOLD = 2  # Keep only edges with weight >= THRESHOLD
+THRESHOLD = 3  # Keep only edges with weight >= THRESHOLD
 INPUT_FILE = "data/pangenome_articles.json"
 
 # Load articles
@@ -44,13 +44,13 @@ print(f"Filtered (weight >= {THRESHOLD}): {len(filtered_nodes)} nodes, {len(filt
 
 # --- Save CYTOSCAPE CSV ---
 with open("data/filtered_edges.csv", "w", newline="", encoding="utf-8") as f:
-    writer = csv.writer(f)
+    writer = csv.writer(f, delimiter=';')
     writer.writerow(["source", "target", "weight"])
     for (author1, author2), weight in filtered_edges.items():
         writer.writerow([author1, author2, weight])
 
 with open("data/filtered_nodes.csv", "w", newline="", encoding="utf-8") as f:
-    writer = csv.writer(f)
+    writer = csv.writer(f, delimiter=';')
     writer.writerow(["id", "affiliation"])
     for name, affiliation in filtered_nodes.items():
         writer.writerow([name, affiliation])
