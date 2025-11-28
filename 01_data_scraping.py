@@ -2,6 +2,8 @@ from Bio import Entrez
 import json
 import time
 
+Entrez.email = "lucienpiat33@gmail.com"
+
 # Search for pangenome articles
 search_handle = Entrez.esearch(db="pubmed", term="pangenome[Title/Abstract]", retmax=10000)
 search_results = Entrez.read(search_handle)
